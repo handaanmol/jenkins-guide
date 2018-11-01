@@ -68,7 +68,8 @@ pipeline {
                         timeout(time:10, unit: 'MINUTES') {
                             sh 'docker tag nodeapp-dev:trunk anmolhanda/nodeapp-prod:latest'
                             sh 'docker push anmolhanda/nodeapp-prod:latest'
-                            sh 'docker save anmolhanda/nodeapp-prod:latest | gzip > nodeapp-prod-golden.tar.gz'
+                            sh 'docker save anmolhanda/nodeapp-prod:latest | gzip > nodeapp-prod-golden.tar.gz',
+                            sh 'docker run --name nodeapp-anmol --network="bridge" -d -p 9000:9000 anmolhanda/nodeapp-prod:latest'
                         }
                     }
 
