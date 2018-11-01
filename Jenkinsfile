@@ -7,8 +7,9 @@ pipeline {
 // Building your Test Images
     stage('BUILD') {
       parallel {
-          stage('Cleaning previous running images') {
+          stage('Cleaning previous running image of node.js application') {
           steps {
+            sh 'docker stop nodeapp-dev'
             sh 'docker system prune -f'
           }
         }
@@ -97,8 +98,8 @@ pipeline {
 // Doing containers clean-up to avoid conflicts in future builds
     stage('CLEAN-UP') {
       steps {
-        //sh 'docker stop nodeapp-dev test-image'
-        //sh 'docker system prune -f'
+        sh 'docker stop test-image'
+        sh 'docker system prune -f'
         deleteDir()
       }
     }
