@@ -11,7 +11,7 @@ const HOST = '0.0.0.0';
 const os = ['IST 615','Cloud Management','Prof. Radhika Garg','Advance Topic Presentation']
 
 // Web Server
-app.get('/',function(req,res) {
+app.get('/Error',function(req,res) {
   res.json(os);
 });
 
