@@ -93,7 +93,7 @@ pipeline {
     stage('CLEAN-UP') {
       steps {
         sh 'docker stop nodeapp-dev test-image'
-        sh 'docker system prune -f'
+        //sh 'docker system prune -f'
         deleteDir()
       }
     }
