@@ -7,6 +7,11 @@ pipeline {
 // Building your Test Images
     stage('BUILD') {
       parallel {
+          stage('Cleaning previous running images') {
+          steps {
+            sh 'docker system prune -f'
+          }
+        }
         stage('Express Image') {
           steps {
             sh 'docker build -f express-image/Dockerfile \
