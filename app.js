@@ -8,7 +8,7 @@ const PORT = 9000;
 const HOST = '0.0.0.0';
 
 // Application content
-const os = ['Windows','macOS','Linux']
+const os = ['IST 615','Cloud Management','Prof. Radhika Garg','Advance Topic Presentation']
 
 // Web Server
 app.get('/',function(req,res) {
