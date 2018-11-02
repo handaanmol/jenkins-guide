@@ -10,6 +10,7 @@ RUN npm install
 
 # Copy node Application
 COPY app.js /home/node/app
+COPY index.html /home/node/app
 
 # Open port
 EXPOSE 9000

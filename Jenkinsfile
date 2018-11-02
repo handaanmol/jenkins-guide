@@ -9,7 +9,7 @@ pipeline {
       parallel {
           stage('Cleaning previous running image of node.js application') {
           steps {
-            //sh 'docker stop nodeapp-dev'
+            sh 'docker stop nodeapp-dev'
             sh 'docker system prune -f'
           }
         }
